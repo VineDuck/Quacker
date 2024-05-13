@@ -13,3 +13,6 @@ The script will work with both Vine-Helper and Hide-Vine-Items script, maybe oth
 - Open RFY page, hide all items.
 - Refresh page.
 - Go use a different tab or window.
+
+After an item has been found, the script will be stopped until you refresh the page manually.
+Just hide any items you don't want, and hit F5.
