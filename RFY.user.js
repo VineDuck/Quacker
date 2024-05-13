@@ -2,7 +2,7 @@
 // @name       Play sound when unhidden vine RFY item detected
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=potluck
 // @grant      none
-// @version    0.2
+// @version    0.3
 // ==/UserScript==
 
 // Refreshes the RFY page every 3 to 8 seconds, while page is not focused.
@@ -49,8 +49,13 @@ function refreshMe() {
         return stopScript();
     }
 
-    var items = document.getElementById('vvp-items-grid').getElementsByClassName('vvp-item-tile');
-    if (! items || items.length) {
+    var items = document.getElementById('vvp-items-grid');
+    if (! items) {
+        console.log('Reloading!');
+        return location.reload();
+    }
+    items = items.getElementsByClassName('vvp-item-tile');
+    if (items && items.length) {
         console.log('Items found, checking visibility');
         for (const item of items) {
             if (window.getComputedStyle(item).display === 'block') {
