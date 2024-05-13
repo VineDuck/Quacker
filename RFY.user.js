@@ -50,7 +50,7 @@ function refreshMe() {
     }
 
     var items = document.getElementById('vvp-items-grid').getElementsByClassName('vvp-item-tile');
-    if (items.length) {
+    if (! items || items.length) {
         console.log('Items found, checking visibility');
         for (const item of items) {
             if (window.getComputedStyle(item).display === 'block') {
