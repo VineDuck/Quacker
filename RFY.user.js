@@ -40,12 +40,12 @@ function stopScript() {
     console.log('Stopping!');
     window.removeEventListener("blur", runScript);
     window.removeEventListener("focus", pauseScript);
-    // Quack!!!
-    alert_sound.play ();
 }
 
 function refreshMe() {
     if (! document.getElementById('vvp-reviews-tab')) {
+        // Quack!!!
+        alert_sound.play ();
         return stopScript();
     }
 
@@ -60,6 +60,8 @@ function refreshMe() {
         for (const item of items) {
             if (window.getComputedStyle(item).display === 'block') {
                 console.log('Found one');
+                // Quack!!!
+                alert_sound.play ();
                 return stopScript();
             }
         }
