@@ -16,3 +16,7 @@ The script will work with both Vine-Helper and Hide-Vine-Items script, maybe oth
 
 After an item has been found, the script will be stopped until you refresh the page manually.
 Just hide any items you don't want, and hit F5.
+
+
+### To use on AFA as well
+- Use this link to install the script: https://raw.githubusercontent.com/Jimbo5431/RFY-Userscript/main/RFY_AFA.user.js
