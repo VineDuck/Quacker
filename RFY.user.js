@@ -2,7 +2,7 @@
 // @name       Play sound when unhidden vine RFY item detected
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=potluck
 // @grant      none
-// @version    0.5
+// @version    0.6
 // ==/UserScript==
 
 // Refreshes the RFY page every 3 to 8 seconds, while page is not focused.
@@ -36,6 +36,12 @@ function flashTitle() {
     }
 }
 
+function stopFlashTitle() {
+    clearInterval(title_interval)
+    document.title = original_title;
+    window.removeEventListener("focus", stopFlashTitle);
+}
+
 function runScript() {
     console.log('Tab is inactive. Setting timeout...');
     refresh_timeout = setTimeout(refreshMe, reload_interval);
@@ -52,6 +58,7 @@ function stopScript() {
     alert_sound.play ();
     window.removeEventListener("blur", runScript);
     window.removeEventListener("focus", pauseScript);
+    window.addEventListener("focus", stopFlashTitle);
     title_interval = setInterval(flashTitle, 750);
 }
 
