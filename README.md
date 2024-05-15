@@ -10,6 +10,7 @@ The script will work with both Vine-Helper and Hide-Vine-Items script, maybe oth
 
 ### How to use
 - Use this link to install the script: https://raw.githubusercontent.com/Jimbo5431/RFY-Userscript/main/RFY.user.js
+- In site settings in chrome, or permissions > autoplay in firefox, make sure to allow amazon.co.uk.
 - Open RFY page, hide all items.
 - Refresh page.
 - Go use a different tab or window.
