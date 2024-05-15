@@ -18,5 +18,4 @@ The script will work with both Vine-Helper and Hide-Vine-Items script, maybe oth
 After an item has been found, the script will be stopped until you refresh the page manually.
 Just hide any items you don't want, and hit F5.
 
-**Important**
-**Make sure you have clicked on the tab before doing something else, or sound may not work. This is due to chrome policies on auto play.**
+**${\textsf{\color{red}Important: Make sure you have clicked on the tab before doing something else, or sound may not work. This is due to chrome policies on auto play.}}$**
