@@ -2,12 +2,19 @@
 // @name       Play sound when unhidden vine RFY item detected
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=potluck
 // @grant      none
-// @version    0.8
+// @version    0.9
 // ==/UserScript==
 
 // Refreshes the RFY page every 3 to 8 seconds, while page is not focused.
 // Quacks if an unhidden item is on the page.
 // Stops if VH is not discovered, and CAPTCHA etc.
+
+
+if (! document.getElementById('vvp-reviews-tab')) {
+    // This is not the page you are looking for
+    stopScript();
+}
+
 
 // between 3 and 8 seconds
 const reload_interval = ((Math.floor(Math.random() * 5)) + 3) * 1000;
@@ -20,6 +27,7 @@ const original_title = document.title;
 
 let refresh_timeout;
 let title_interval;
+let new_load = true;
 
 window.addEventListener("blur", runScript);
 window.addEventListener("focus", pauseScript);
@@ -45,6 +53,9 @@ function stopFlashTitle() {
 function runScript() {
     console.log('Tab is inactive. Setting timeout...');
     refresh_timeout = setTimeout(refreshMe, reload_interval);
+    if (new_load) {
+        checkNew();
+    }
 }
 
 function pauseScript() {
@@ -56,21 +67,18 @@ function stopScript() {
     console.log('Stopping!');
     // Quack!!!
     alert_sound.play ();
+    clearTimeout(refresh_timeout);
     window.removeEventListener("blur", runScript);
     window.removeEventListener("focus", pauseScript);
     window.addEventListener("focus", stopFlashTitle);
     title_interval = setInterval(flashTitle, 750);
 }
 
-function refreshMe() {
-    if (! document.getElementById('vvp-reviews-tab')) {
-        return stopScript();
-    }
-
+function checkNew() {
+    new_load = false;
     let items = document.getElementById('vvp-items-grid');
     if (! items) {
-        console.log('Reloading!');
-        return location.reload();
+        return;
     }
     items = items.getElementsByClassName('vvp-item-tile');
     if (items && items.length) {
@@ -82,7 +90,9 @@ function refreshMe() {
             }
         }
     }
+}
 
+function refreshMe() {
     console.log('Reloading!');
     location.reload();
 }
