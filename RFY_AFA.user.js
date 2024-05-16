@@ -3,7 +3,7 @@
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=potluck
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=last_chance
 // @grant      none
-// @version    0.8
+// @version    0.9
 // ==/UserScript==
 
 // Refreshes the RFY page every 3 to 8 seconds, while page is not focused.
