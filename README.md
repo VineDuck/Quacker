@@ -1,7 +1,7 @@
 # Vine UK RFY/AFA refresh userscript (The QUACKER!)
 ### Quacks when an unhidden RFY item is found.
 
-**${\textsf{\color{green}Current version 1.02}}$ Updated 16/05/24 14:42**
+**${\textsf{\color{green}Current version 1.03}}$ Updated 16/05/24 15:50**
 
 
 Refreshes the RFY page every 3 to 8 seconds as long as the tab is not focused and there are no RFY items showing.
