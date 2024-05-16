@@ -2,14 +2,14 @@
 // @name       Play sound when unhidden vine RFY item detected
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=potluck
 // @grant      none
-// @version    1.0
+// @version    1.01
 // ==/UserScript==
 
 // Refreshes the RFY page every 3 to 8 seconds, while page is not focused.
 // Quacks if an unhidden item is on the page.
 // Stops on CAPTCHA etc.
 
-if ( document.getElementById('vvp-reviews-tab')) {
+if (! document.getElementById('vvp-reviews-tab')) {
     // This is not the page you are looking for
     console.log ('Wrong page, aborting');
     throw new Error("Possibly a captcha");
