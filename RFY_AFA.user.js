@@ -3,7 +3,7 @@
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=potluck
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=last_chance
 // @grant      none
-// @version    1.02
+// @version    1.03
 // ==/UserScript==
 
 // Refreshes the RFY page every 3 to 8 seconds, while page is not focused.
@@ -55,7 +55,7 @@ function runScript() {
     refresh_timeout = setTimeout(refreshMe, reload_interval);
     if (new_load) {
         // need to wait while addons hide the items
-        document.setTimeout(checkNew, 1500);
+        setTimeout(checkNew, 1500);
     }
 }
 
