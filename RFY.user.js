@@ -2,7 +2,7 @@
 // @name       Play sound when unhidden vine RFY item detected
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=potluck
 // @grant      none
-// @version    1.01
+// @version    1.02
 // ==/UserScript==
 
 // Refreshes the RFY page every 3 to 8 seconds, while page is not focused.
@@ -53,7 +53,8 @@ function runScript() {
     console.log('Tab is inactive. Setting timeout...');
     refresh_timeout = setTimeout(refreshMe, reload_interval);
     if (new_load) {
-        checkNew();
+        // need to wait while addons hide the items
+        document.setTimeout(checkNew, 1500);
     }
 }
 

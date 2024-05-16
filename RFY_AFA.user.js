@@ -3,10 +3,10 @@
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=potluck
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=last_chance
 // @grant      none
-// @version    1.01
+// @version    1.02
 // ==/UserScript==
 
-// Refreshes the RFY or AFA page every 3 to 8 seconds, while page is not focused.
+// Refreshes the RFY page every 3 to 8 seconds, while page is not focused.
 // Quacks if an unhidden item is on the page.
 // Stops on CAPTCHA etc.
 
@@ -54,7 +54,8 @@ function runScript() {
     console.log('Tab is inactive. Setting timeout...');
     refresh_timeout = setTimeout(refreshMe, reload_interval);
     if (new_load) {
-        checkNew();
+        // need to wait while addons hide the items
+        document.setTimeout(checkNew, 1500);
     }
 }
 
