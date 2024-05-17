@@ -12,7 +12,7 @@ You will need a userscript plugin such as GreaseMonkey, VoilentMonkey, FireMonke
 The script will work with both Vine-Helper and Hide-Vine-Items script, maybe others. If it hides items, it'll probably work.
 
 ### How to use
-- Use [this link](https://raw.githubusercontent.com/Jimbo5431/RFY-Userscript/main/RFY.user.js) to install the script for RFY only, or [this link](https://raw.githubusercontent.com/Jimbo5431/RFY-Userscript/main/RFY_AFA.user.js) for AFA as well.
+- Use [this link](https://raw.githubusercontent.com/Jimbo5431/RFY-Userscript/main/RFY.user.js) to install the script for RFY only, or [this link](https://raw.githubusercontent.com/Jimbo5431/RFY-Userscript/main/RFY_AFA.user.js) for AFA as well. To include AI, use [this link](https://raw.githubusercontent.com/Jimbo5431/RFY-Userscript/main/RFY_AFA_AI.user.js).
 - In site settings in chrome, or permissions > autoplay in firefox, make sure to allow amazon.co.uk for sound.
 - Open RFY page, hide all items.
 - Refresh page.
@@ -25,4 +25,4 @@ Just hide any items you don't want, and hit F5.
 **${\textsf{\color{red}This is due to chrome policies on auto play.}}$**
 
 ### How to update
-- Use [this link](https://raw.githubusercontent.com/Jimbo5431/RFY-Userscript/main/RFY.user.js) to update the script for RFY only, or [this link](https://raw.githubusercontent.com/Jimbo5431/RFY-Userscript/main/RFY_AFA.user.js) for AFA as well.
+- Use [this link](https://raw.githubusercontent.com/Jimbo5431/RFY-Userscript/main/RFY.user.js) to update the script for RFY only, or [this link](https://raw.githubusercontent.com/Jimbo5431/RFY-Userscript/main/RFY_AFA.user.js) for AFA as well. For AI, it's [this link](https://raw.githubusercontent.com/Jimbo5431/RFY-Userscript/main/RFY_AFA_AI.user.js)
