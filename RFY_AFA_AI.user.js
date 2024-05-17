@@ -2,7 +2,7 @@
 // @name       Play sound when unhidden vine RFY item detected
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=potluck
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=last_chance
-// @match      https://www.amazon.co.uk/vine/vine-items?queue=encore
+// @match      https://www.amazon.co.uk/vine/vine-items?queue=encore*
 // @grant      none
 // @version    1.03
 // ==/UserScript==
