@@ -1,30 +1,46 @@
 // ==UserScript==
 // @name       Play sound when unhidden vine RFY item detected
-// @match      https://www.amazon.co.uk/vine/vine-items?queue=potluck
-// @match      https://www.amazon.co.uk/vine/vine-items?queue=last_chance
+// @match      https://www.amazon.co.uk/vine/vine-items?queue=potluck*
+// @match      https://www.amazon.co.uk/vine/vine-items?queue=last_chance*
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=encore*
-// @grant      none
-// @version    1.03
+// @grant      GM.notification
+// @version    1.04
 // ==/UserScript==
 
-// Refreshes the RFY page every 3 to 8 seconds, while page is not focused.
+// Refreshes the vine pages every 3 to 8 seconds, while page is not focused.
 // Quacks if an unhidden item is on the page.
 // Stops on CAPTCHA etc.
+
+// change to false to skip notifications.
+const show_notifications = true;
+// control notifications for AI and AFA
+const show_notifications_on_ai = false;
+const show_notifications_on_afa = true;
+
+// Alert sound
+const alert_sound = new Audio ("https://github.com/Jimbo5431/RFY-Userscript/raw/main/quack.mp3");
+
+// Notification image
+const notification_image_url = "https://raw.githubusercontent.com/Jimbo5431/RFY-Userscript/main/rubber-duck.png";
+
+
+////////////////////////////////////////////////////////////
+//                      Start script                      //
+////////////////////////////////////////////////////////////
+
+const queue = new URL(window.location).searchParams.get('queue');
 
 if (! document.getElementById('vvp-reviews-tab')) {
     // This is not the page you are looking for
     console.log ('Wrong page, aborting');
+    alert_sound.play ();
     throw new Error("Possibly a captcha");
 }
 
-// between 3 and 8 seconds
-const reload_interval = ((Math.floor(Math.random() * 5)) + 3) * 1000;
-console.log('Delay: ' + reload_interval);
-
-// Quack!!!
-const alert_sound = new Audio ("https://github.com/Jimbo5431/RFY-Userscript/raw/main/quack.mp3");
-
+const reload_interval = ((Math.floor(Math.random() * 5000)) + 3000);
 const original_title = document.title;
+
+console.log('Delay: ' + reload_interval);
 
 let refresh_timeout;
 let title_interval;
@@ -69,6 +85,7 @@ function stopScript() {
     console.log('Stopping!');
     // Quack!!!
     alert_sound.play ();
+    showNotif();
     clearTimeout(refresh_timeout);
     window.removeEventListener("blur", runScript);
     window.removeEventListener("focus", pauseScript);
@@ -97,4 +114,30 @@ function checkNew() {
 function refreshMe() {
     console.log('Reloading!');
     location.reload();
+}
+
+function showNotif() {
+    
+    if (! show_notifications)
+        return false;
+
+    switch (queue) {
+        case "last_chance":
+            if (! show_notifications_on_afa)
+                return false;
+            break;
+        case "encore":
+            if (! show_notifications_on_ai)
+                return false;
+            break;
+    }
+
+    GM.notification({
+        text: "🦆🦆 quack quack 🦆🦆",
+        title: "New item listed",
+        image: notification_image_url,
+        onclick: function() {
+            window.parent.focus();
+        }
+    });
 }
