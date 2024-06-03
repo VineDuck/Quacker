@@ -4,6 +4,7 @@
 **${\textsf{\color{green}Current version 1.04}}$ Updated 03/06/24 03:55**
 
 ➕ Added notifications to RFY and AFA. Can be toggled to also work on AI.
+
 ➕ Changed refresh timing to use milliseconds instead of seconds. A little more randomness should help prevent being detected as a bot.
 
 Refreshes the RFY page every 3 to 8 seconds as long as the tab is not focused and there are no RFY items showing.
