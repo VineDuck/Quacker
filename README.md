@@ -1,7 +1,7 @@
 # Vine UK RFY/AFA refresh userscript (The QUACKER!)
 ### Quacks when an unhidden RFY item is found.
 
-**${\textsf{\color{green}Current version 1.04}}$ Updated 03/06/24 03:55**
+**${\textsf{\color{green}Current version 1.05}}$ Updated 20/06/24 16:20**
 
 ➕ Added notifications to RFY and AFA. Can be toggled to also work on AI.
 
