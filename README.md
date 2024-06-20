@@ -3,6 +3,8 @@
 
 **${\textsf{\color{green}Current version 1.05}}$ Updated 20/06/24 16:20**
 
+➕ Attempt to skip browser caching using a timestamp in URL.
+
 ➕ Added notifications to RFY and AFA. Can be toggled to also work on AI.
 
 ➕ Changed refresh timing to use milliseconds instead of seconds. A little more randomness should help prevent being detected as a bot.
