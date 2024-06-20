@@ -3,7 +3,7 @@
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=potluck*
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=last_chance*
 // @grant      GM.notification
-// @version    1.04
+// @version    1.05
 // ==/UserScript==
 
 // Refreshes the vine pages every 3 to 8 seconds, while page is not focused.
@@ -112,7 +112,10 @@ function checkNew() {
 
 function refreshMe() {
     console.log('Reloading!');
-    location.reload();
+    let ts = Math.floor(Date.now() / 1000);
+    let href = new URL(window.location.href);
+    href.searchParams.set('ts', ts);
+    window.location.assign(href.toString());
 }
 
 function showNotif() {
