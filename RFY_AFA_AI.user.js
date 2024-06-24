@@ -3,6 +3,7 @@
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=potluck*
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=last_chance*
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=encore*
+// @include    /^https:\/\/www\.amazon\.co\.uk/vine/vine-items$/
 // @grant      GM.notification
 // @version    1.05
 // ==/UserScript==
