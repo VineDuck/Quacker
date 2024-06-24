@@ -5,7 +5,7 @@
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=encore*
 // @include    /^https:\/\/www\.amazon\.co\.uk/vine/vine-items$/
 // @grant      GM.notification
-// @version    1.05
+// @version    1.06
 // ==/UserScript==
 
 // Refreshes the vine pages every 3 to 8 seconds, while page is not focused.
