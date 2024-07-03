@@ -5,7 +5,7 @@
 // @match      https://www.amazon.co.uk/vine/vine-items?queue=encore*
 // @include    /^https:\/\/www\.amazon\.co\.uk/vine/vine-items$/
 // @grant      GM.notification
-// @version    1.06
+// @version    1.07
 // ==/UserScript==
 
 // Refreshes the vine pages every 3 to 8 seconds, while page is not focused.
@@ -114,9 +114,9 @@ function checkNew() {
 
 function refreshMe() {
     console.log('Reloading!');
-    let ts = Math.floor(Date.now() / 1000);
+//    let ts = Math.floor(Date.now() / 1000);
     let href = new URL(window.location.href);
-    href.searchParams.set('ts', ts);
+//    href.searchParams.set('ts', ts);
     window.location.assign(href.toString());
 }
 
